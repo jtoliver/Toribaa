@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'paperclip'
 gem 'heroku'
+gem 'activerecord-postgresql-adapter'
 gem 'will_paginate'
 
 # Use unicorn as the web server
