@@ -1,6 +1,5 @@
 class HomesController < ApplicationController
   respond_to :html, :js
-  layout 'admin', :except => [:index]
   
   def index
     @homes = Home.all
