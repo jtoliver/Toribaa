@@ -16,6 +16,15 @@ body {
 	/*background:url(<%= asset_path 'header_top.png' %>) repeat-x bottom left;*/
 }
 
+div.divider {
+	background:url(<%= asset_path 'divider.png' %>);
+	height:47px;
+	width:1140px;
+	z-index:3;
+	position:relative;
+	margin-top:-21px;
+}
+
 .scroll_l {
 	position:absolute;
 	left:0;
@@ -180,8 +189,6 @@ p.blogp {
 	background:#0a1310 url(<%= asset_path 'port_bg.jpg' %>);
 	-webkit-box-shadow: 0px 0px 6px 0px #000000;
 	-moz-box-shadow: 0px 0px 6px 0px #000000;
-	box-shadow: 0px 0px 6px 0px #000000;
-	border-bottom:3px solid #000;
 	padding-bottom:30px;	
 }
 
