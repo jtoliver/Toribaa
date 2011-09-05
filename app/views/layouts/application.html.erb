@@ -33,18 +33,9 @@
 <body>
 	<div class="scroll_l"><%= image_tag('scroll_down.png')%></div>
 	<div class="scroll_r mobile-hide"><%= image_tag('scroll_down.png')%></div>
-	<div class="container bodytop mobile-hide">
+	<div class="container bodytop">
 		<div class="row">
 			<div class="col_12 scroll">
-				
-			</div>
-		</div>	
-	</div>
-	<div id="home"></div>
-	<div class="container home">
-		<div class="row">
-			<div class="col_8 pre_4 mobile-hide">
-				<div class="headspace"></div>
 				<h1>
 					<% if  (('00'..'12') === Time.now.strftime("%H")) %>
 						Ohayoo!
@@ -55,8 +46,17 @@
 					<% if  (('18'..'23') === Time.now.strftime("%H")) %>
 						Konbanwa
 					<% end %>
+					<br />
+					<span>I'm Josh Toliver... Multimedia Artist / Web Developer</span>
 				</h1>
-				<h2>Multimedia Artist <span>/</span> Web Developer</h2>
+			</div>
+		</div>	
+	</div>
+	<div id="home"></div>
+	<div class="container home">
+		<div class="row">
+			<div class="col_8 pre_4 mobile-hide">
+			
 			</div>
 		</div>	
 	</div>	

@@ -64,7 +64,7 @@ h1 {
 	margin-bottom:45px;
 }
 
-h1, h2, h3, h4, .visit, span.cat {
+h1, h2, h3, h4, .visit, span.cat, .scroll h1 {
 	-webkit-mask-image: url(<%= asset_path 'mask.png' %>);
 	-o-mask-image: url(<%= asset_path 'mask.png' %>);
 	-moz-mask-image: url(<%= asset_path 'mask.png' %>);
@@ -73,6 +73,25 @@ h1, h2, h3, h4, .visit, span.cat {
 
 .home, .about, .process, .portfolio, .contact {
 	min-height:650px;
+}
+
+.scroll h1 {
+	text-transform:uppercase;
+	text-align:center;
+	font-family: 'LeagueGothicRegular';
+	font-size:2.5em;
+	text-shadow: 0px -1px 0px #374683;
+	margin-top:10px;
+}
+
+.scroll h1 span {
+	text-transform:uppercase;
+	text-align:center;
+	font-family: 'avantgarde' !important;
+	font-size:.3em !important;
+	text-shadow: none;
+	font-weight:normal;
+	color:#666;
 }
 
 /* home */
@@ -107,7 +126,7 @@ h1, h2, h3, h4, .visit, span.cat {
 }
 
 .headspace {
-	height:140px;
+	height:0px;
 }
 
 /* nav */
@@ -150,6 +169,7 @@ ul.nav li a:hover {
 	text-transform:uppercase;
 	letter-spacing:1px;
 	line-height:40px;
+		font-weight:normal;
 }
 
 .about ul li {
@@ -284,7 +304,8 @@ ul.contactlinks li a {
 	text-transform:uppercase;
 	color:#e7e4db;
 	font-size:30px;
-	line-height:40px
+	line-height:40px;
+	font-weight:normal;
 }
 
 input.text {
