@@ -1,0 +1,33 @@
+<h1>New home</h1>
+
+<%= render 'form' %>
+
+<h1>Portfolio Items</h1>
+
+<table>
+  <tr>
+	<th></th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Website</th>
+    <th></th>
+  </tr>
+
+<% @homes.each do |home| %>
+  <tr>
+	<td><%= image_tag(home.port.url(:thumb), :alt => home.title) %></td>
+    <td><%= home.title %></td>
+    <td><%= home.description %></td>
+    <td><%= home.category %></td>
+    <td><%= home.image_url %></td>
+    <td>
+		<%= link_to 'Show', home %><br />
+    	<%= link_to 'Edit', edit_home_path(home) %><br />
+  		<%= link_to 'Destroy', home, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+<br />

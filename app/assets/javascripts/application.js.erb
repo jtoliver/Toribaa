@@ -1,0 +1,40 @@
+// This is a manifest file that'll be compiled into including all the files listed below.
+// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
+// be included in the compiled file accessible from http://example.com/assets/application.js
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// the compiled file.
+//
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
+//= require vendor
+
+$(function(){
+	// still trying to figure out why the hell I wrote this
+	$('ul.hover_block li').hover(function(){
+		$(this).find('img').animate({top:'182px'},{queue:false,duration:500});
+	}, function(){
+		$(this).find('img').animate({top:'0px'},{queue:false,duration:500});
+	});
+	
+	// twitter
+	$(".tweet").tweet({
+		join_text: "auto",
+		username: "toribaa",
+		avatar_size: 50,
+		count: 3,
+		auto_join_text_default: "we said,",
+		auto_join_text_ed: "we",
+		auto_join_text_ing: "we were",
+		auto_join_text_reply: "we replied",
+		auto_join_text_url: "we were checking out",
+		loading_text: "loading tweets..."
+	});
+	
+
+});	
+
+
+
+
+

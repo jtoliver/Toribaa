@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @home.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @home.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @home.image_url %>
+</p>
+
+<p>
+  <b>Video url:</b>
+  <%= @home.video_url %>
+</p>
+
+<p>
+  <b>Song url:</b>
+  <%= @home.song_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_home_path(@home) %> |
+<%= link_to 'Back', homes_path %>

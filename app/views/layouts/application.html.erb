@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en-us" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en-us" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-us" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en-us" class="no-js ie9"> <![endif]-->   
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toribaa :: Portfolio of Joshua Toliver :: Multimedia Artist/Web Developer</title>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif&v1' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Alike' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'columnal' %> 
+  <%= stylesheet_link_tag 'custom' %> 
+  <%= stylesheet_link_tag 'reveal' %> 
+  <%= stylesheet_link_tag 'slider' %> 
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+  <!-- Fixes for IE -->
+		<!--[if lt IE 9]>
+	    	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
+		<![endif]-->
+
+	<!-- use "fixed-984px-ie.css" or "fixed-960px-ie.css for a 984px or 960px fixed width for IE6 and 7 -->
+		<!--[if lte IE 7]>
+			<link rel="stylesheet" href="css/fixed-984px-ie.css" type="text/css" media="screen" />
+		<![endif]-->
+	<!-- End fixes for IE -->
+</head>
+<body>
+	<div class="scroll_l"><%= image_tag('scroll_down.png')%></div>
+	<div class="scroll_r mobile-hide"><%= image_tag('scroll_down.png')%></div>
+	<div class="container bodytop mobile-hide">
+		<div class="row">
+			<div class="col_12 scroll">
+				
+			</div>
+		</div>	
+	</div>
+	<div id="home"></div>
+	<div class="container home">
+		<div class="row">
+			<div class="col_8 pre_4 mobile-hide">
+				<div class="headspace"></div>
+				<h1>
+					<% if  (('00'..'12') === Time.now.strftime("%H")) %>
+						Ohayoo!
+					<% end %>
+					<% if  (('13'..'17') === Time.now.strftime("%H")) %>
+						Konnichiwa!
+					<% end %>
+					<% if  (('18'..'23') === Time.now.strftime("%H")) %>
+						Konbanwa
+					<% end %>
+				</h1>
+				<h2>Multimedia Artist <span>/</span> Web Developer</h2>
+			</div>
+		</div>	
+	</div>	
+	<!-- About -->
+	<div id="about"></div>
+	<div class="container about">
+		<div class="row about_title">
+			<div class="col_12">
+				<h1>A little info about me.</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col_6">
+				<p>Hi my name is Josh! I am a Multi-media artist and Web Developer from Columbia, SC. I attended the University of South Carolina 2005 and graduated with a Bachelors in Media Arts in 2007. My expertise range from graphic design, audio design, film, to web design and programming. I currently work at the university. I also freelance. If you have a project email me at josh.me.21@gmail.com or fill out the contact form below.</p>
+			<div class="row">
+				<div class="col_6">
+					<h4>Web Development</h4>
+					<ul>
+						<li class="dev">HTML 4/5</li>
+						<li class="dev">Javascript/Ajax/Jquery</li>
+						<li class="dev">CSS 2/3</li>
+						<li class="dev">PHP/Ruby on Rails</li>
+						<li class="data">Mysql/SQL/Mongo</li>
+					</ul>
+				</div>
+				<div class="col_6 last">
+					<h4>Media</h4>
+					<ul>
+						<li>Video Production</li>
+						<li>Audio Production</li>
+						<li>Motion Graphics</li>
+						<li>Print/Web Graphics</li>
+						<li>Media Writing</li>
+					</ul>
+				</div>
+			</div>		
+			</div>
+			<div class="col_6 last">
+				<h4>Blog</h4>
+					<% @blogs.each do |blog| %>
+						<div id="blog-<%= blog.id %>" class="blog"><%= blog.title %><br />
+						<span>Posted <%= distance_of_time_in_words(Time.now , blog.created_at) %> ago</span></div>
+						<div id="blogbody-<%= blog.id %>" class="blogbody"><p class="blogp"><%= blog.body.html_safe %></p></div>
+					<% end %>
+					<script>
+					// find better way to do this
+					<% @blogs.each do |blog| %>
+					$('#blogbody-<%= blog.id %>').hide();	
+						$('#blog-<%= blog.id %>').click(function(){
+							$('#blogbody-<%= blog.id %>').slideToggle();
+					});
+					<% end %>
+					</script>		
+				<h4>Twitter</h4>
+				<div class="tweet"></div>
+				<h4>Do you wanna get in touch?</h4>
+					For now email me at <a href="mailto:josh.me.21@gmail.com">josh.me.21@gmail.com</a>
+					
+					<ul class="contactlinks">
+					<!--<li><a href="#" class="questionaire contactlink"><img src="images/pdf-icon.png"/>Questionaire</a></li>-->
+					<li><a href="http://uimagesphotos.com/toribaa/joshua_toliver.pdf"><%= image_tag('pdf-icon.png') %> Resume</a></li>
+					<li><a href="http://www.facebook.com/toribaa"><%= image_tag('Facebook-icon.png') %>Facebook</a></li>
+					<li><a href="http://www.twitter.com/toribaa"><%= image_tag('Twitter-icon.png') %>Twitter</a>
+					</li>
+					<li><a href="http://www.linkedin.com/pub/joshua-toliver/15/b3b/8b2"><%= image_tag('linkedin-icon.png') %>Linkedin</a></li>
+					</ul>
+					<br />
+			</div>			
+		</div>
+	</div>	
+	<!-- Portfolio -->
+	<div id="portfolio"></div>
+	<div class="container portfolio">
+		<div class="row">
+			<div class="col_12">
+				<h1>So...Take a glance at some of my work.</h1>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col_12">
+				<%= yield %>
+			</div>		
+		</div>
+	</div>				
+	<!-- Footer -->
+	<div class="container footer">
+		<div class="row">
+			<div class="col_6">
+				<h3>Important Info</h3>
+				<a href="http://www.section508.gov/">Section 508 Compliance</a>
+			</div>
+			<div class="col_6 last">
+				<h3>You might find me lurking around</h3>
+				<a href="http://www.smashingmagazine.com">Smashing Magazine</a><br />
+				<a href="http://www.forrst.com/">Forrst</a><br />
+				<a href="http://www.github.com">Github</a><br />
+			</div>		
+		</div>
+		<div class="row">
+			<div class="col_12 copyright">
+				&copy Toribaa.com 2011
+			</div>	
+		</div>	
+	</div>					
+</body>
+</html>
