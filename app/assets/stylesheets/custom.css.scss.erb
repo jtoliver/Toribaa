@@ -16,13 +16,23 @@ body {
 	/*background:url(<%= asset_path 'header_top.png' %>) repeat-x bottom left;*/
 }
 
-div.divider {
-	background:url(<%= asset_path 'divider.png' %>);
+.divider_2 {
+	background:url(<%= asset_path 'divider_3.png' %>);
 	height:47px;
-	width:1140px;
+	width:100%;
 	z-index:3;
-	position:relative;
 	margin-top:-21px;
+	opacity:.5;
+}
+
+.divider {
+	background:url(<%= asset_path 'divider_3.png' %>);
+	height:47px;
+	width:100%;
+	z-index:3;
+	margin-top:-21px;
+	position:absolute;
+	opacity:.5;
 }
 
 .scroll_l {
@@ -158,8 +168,7 @@ ul.nav li a:hover {
  
 .about a:hover {
 	text-decoration:none;
-	background:#333;
-	padding:2px;
+	background:#333 !important;
 }
 
 .about h4 {
@@ -202,13 +211,20 @@ p.blogp {
 	float:left;
 }
 
+a.tweet_avatar img {
+	float:left;
+	margin:10px;
+}
+
+.tweet_text, .tweet_time, .tweet_join {
+	font-size:.8em;
+	line-height:2px;
+}
 
 /* portfolio */
 
 .portfolio {
 	background:#0a1310 url(<%= asset_path 'port_bg.jpg' %>);
-	-webkit-box-shadow: 0px 0px 6px 0px #000000;
-	-moz-box-shadow: 0px 0px 6px 0px #000000;
 	padding-bottom:30px;	
 }
 
@@ -227,6 +243,7 @@ p.blogp {
 
 .portentry {
 	padding: 20px 0 4px 0;
+	margin-bottom:25px;
 }
 
 .portfolio img {
@@ -248,7 +265,7 @@ p.blogp {
 	line-height:31px;
 }
 
-span.cat {
+div.cat {
 	font-family: 'avantgarde';
 	font-size:14px;
 	color:#333;
@@ -263,7 +280,7 @@ span.cat {
 
 a.visit {
 	background:#333;
-	padding:11px 50px 8px 50px;
+	padding:11px 20px 8px 20px;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
@@ -292,6 +309,9 @@ ul.contactlinks li a {
 	float:left;
 }
 
+ul.contactlinks li a:hover {
+	background:none !important;
+}
 
 /* footer */
 .footer {
