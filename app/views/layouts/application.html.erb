@@ -21,12 +21,12 @@
   <%= csrf_meta_tag %>
   <!-- Fixes for IE -->
 		<!--[if lt IE 9]>
-	    	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
+			<%= stylesheet_link_tag 'ie.css' %>
 		<![endif]-->
 
 	<!-- use "fixed-984px-ie.css" or "fixed-960px-ie.css for a 984px or 960px fixed width for IE6 and 7 -->
 		<!--[if lte IE 7]>
-			<link rel="stylesheet" href="css/fixed-984px-ie.css" type="text/css" media="screen" />
+			<%= stylesheet_link_tag 'fixed-984px-ie.css' %>
 		<![endif]-->
 	<!-- End fixes for IE -->
 </head>
