@@ -2,18 +2,21 @@
 	<div class="row">
 		<% @homes.each do |home| %>
 			<div class="col_6 <%= cycle("first","last" ) %> portentry ">
+			<div class="controls">	
 				<!-- image -->
 				<div class="cat"><%= home.category %></div>
 				<a href="#" data-reveal-id="<%= home.title.gsub(/[\s_]+/, '-').strip %>_modal" data-animation="fadeAndPop" data-animationspeed="300" data-closeonbackgroundclick="true" data-dismissmodalclass="close-reveal-modal" class="mask"><%= image_tag(home.port.url(:medium), :alt => home.title) %></a>
-				<!-- info -->
-				<h2><%= home.title %></h2>
-				<p><%= home.description %></p>
-				<%= home.technologies %>
+				
 				<% if !home.image_url.blank? %>
 					<%= link_to 'Visit', home.image_url, :class => 'visit' %>
 				<% else %>
 					<a href="#" data-reveal-id="<%= home.title.gsub(/[\s_]+/, '-').strip %>_modal" data-animation="fadeAndPop" data-animationspeed="300" data-closeonbackgroundclick="true" data-dismissmodalclass="close-reveal-modal" class="visit">Enlarge<% image_tag(home.port.url(:medium), :alt => home.title) %></a>
 				<% end %>
+			</div>
+				<!-- info -->
+				<h2><%= home.title %></h2>
+				<p><%= home.description %></p>
+				<%= home.technologies %>
 				<%= home.video_url %>
 				<%= home.song_url %>
 			</div>
