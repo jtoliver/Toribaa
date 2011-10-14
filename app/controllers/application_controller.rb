@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   private
   
   def blog
-    @blogs = Blog.order("created_at DESC")
-    
+      @blogs = Blog.all
   end
+  
+
 end

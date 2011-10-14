@@ -1,0 +1,29 @@
+<div class="scroll_l"><a href="#about"><%= image_tag('scroll_down.png')%></a></div>
+<div class="scroll_r mobile-hide"><a href="#about"><%= image_tag('scroll_down.png')%></a></div>
+<div class="container bodytop">
+	<div class="row">
+		<div class="col_12 scroll">
+			<h1>
+				<% if  (('00'..'12') === Time.now.strftime("%H")) %>
+					Ohayoo!
+				<% end %>
+				<% if  (('13'..'17') === Time.now.strftime("%H")) %>
+					Konnichiwa!
+				<% end %>
+				<% if  (('18'..'23') === Time.now.strftime("%H")) %>
+					Konbanwa
+				<% end %>
+				<br />
+				<span>I'm Josh Toliver... Multimedia Artist / Web Developer</span>
+			</h1>
+		</div>
+	</div>	
+</div>
+<div id="home"></div>
+<div class="container home">
+	<div class="row">
+		<div class="col_8 pre_4 mobile-hide">
+		
+		</div>
+	</div>	
+</div>

@@ -5,10 +5,9 @@ class HomesController < ApplicationController
     @homes = Home.all
   end
   
-  
   def within_a_div
      index
-   end
+  end
 
   def show
     @home = Home.find(params[:id])

@@ -1,25 +1,11 @@
-<h1>Listing blogs</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<% content_for :blog go %>
+<h4>Blog</h4>
 <% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.title %></td>
-    <td><%= blog.body.html_safe %></td>
-    <td><%= link_to 'Show', blog %></td>
-    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-    <td><%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<div id="blog-<%= blog.id %>" class="blog"><%= blog.title %><br />
+	<span>Posted <%= distance_of_time_in_words(Time.now , blog.created_at) %> ago</span></div>
+	<div id="blogbody-<%= blog.id %>" class="blogbody"><p class="blogp"><%= blog.body.html_safe %></p></div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Blog', new_blog_path %>
+<script>
+	$('')
+</script>
+<% end %>

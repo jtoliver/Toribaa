@@ -1,0 +1,70 @@
+<div id="about"></div>
+<div class="container about">
+	<div class="row about_title">
+		<div class="col_12">
+			<h1>A little info about me.</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col_6">
+			<p>Hi my name is Josh! I am a Multi-media artist and Web Developer from Columbia, SC. I attended the University of South Carolina 2005 and graduated with a Bachelors in Media Arts in 2007. My expertise range from graphic design, audio design, film, to web design and programming. I currently work at the university. I also freelance. If you have a project email me at josh.me.21@gmail.com.</p>
+		<div class="row">
+			<div class="col_3">
+				<h4>Web Development</h4>
+				<ul>
+					<li class="dev">HTML 4/5</li>
+					<li class="dev">Javascript/Ajax/Jquery</li>
+					<li class="dev">CSS 2/3</li>
+					<li class="dev">PHP/Ruby on Rails</li>
+					<li class="data">Mysql/SQL/Mongo</li>
+				</ul>
+			</div>
+			<div class="col_3">
+				<h4>Media</h4>
+				<ul>
+					<li>Video Production</li>
+					<li>Audio Production</li>
+					<li>Motion Graphics</li>
+					<li>Print/Web Graphics</li>
+					<li>Media Writing</li>
+				</ul>
+			</div>
+		</div>		
+		</div>
+		<div class="col_6 last">
+			<h4>Blog</h4>
+			<% @blogs.each do |blog| %>
+				<ul class="blogs">
+					<li><div id="blog-<%= blog.id %>" class="blog"><%= blog.title %><br />
+						<span>Posted <%= distance_of_time_in_words(Time.now , blog.created_at) %> ago</span></div>
+						<div id="blogbody-<%= blog.id %>" class="blogbody"><p class="blogp"><%= blog.body.html_safe %></p></div>
+					</li>
+				</ul>	
+			<% end %>
+			<script>
+			// find better way to do this
+			<% @blogs.each do |blog| %>
+				$('#blogbody-<%= blog.id %>').hide();	
+					$('#blog-<%= blog.id %>').click(function(){
+						$('#blogbody-<%= blog.id %>').slideToggle();
+				});
+			<% end %>
+			</script>		
+			<h4>Twitter</h4>
+			<div class="tweet"></div>
+			<h4>Do you wanna get in touch?</h4>
+				For now email me at <a href="mailto:josh.me.21@gmail.com">josh.me.21@gmail.com</a>
+				
+				<ul class="contactlinks">
+				<!--<li><a href="#" class="questionaire contactlink"><img src="images/pdf-icon.png"/>Questionaire</a></li>-->
+				<li><a href="http://uimagesphotos.com/toribaa/joshua_toliver.pdf"><%= image_tag('pdf-icon.png') %></a></li>
+				<li><a href="http://www.facebook.com/toribaa"><%= image_tag('Facebook-icon.png') %></a></li>
+				<li><a href="http://www.twitter.com/toribaa"><%= image_tag('Twitter-icon.png') %></a>
+				</li>
+				<li><a href="http://www.linkedin.com/pub/joshua-toliver/15/b3b/8b2"><%= image_tag('linkedin-icon.png') %></a></li>
+				</ul>
+				<br />
+		</div>			
+	</div>
+</div>
+<div class="container divider"></div>
