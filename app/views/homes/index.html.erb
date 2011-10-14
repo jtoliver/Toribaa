@@ -5,7 +5,7 @@
 			<div class="controls">	
 				<!-- image -->
 				<div class="cat"><%= home.category %></div>
-				<a href="#" data-reveal-id="<%= home.title.gsub(/[\s_]+/, '-').strip %>_modal" data-animation="fadeAndPop" data-animationspeed="300" data-closeonbackgroundclick="true" data-dismissmodalclass="close-reveal-modal" class="mask"><%= image_tag(home.port.url(:medium), :alt => home.title) %></a>
+				<a href="#" data-reveal-id="<%= home.title.gsub(/[\s_]+/, '-').strip %>_modal" data-animation="fadeAndPop" data-animationspeed="300" data-closeonbackgroundclick="true" data-dismissmodalclass="close-reveal-modal" class="mask"><div class="img_overlay"></div><%= image_tag(home.port.url(:medium), :alt => home.title) %></a>
 				
 				<% if !home.image_url.blank? %>
 					<%= link_to 'Visit', home.image_url, :class => 'visit' %>
